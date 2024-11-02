@@ -4,7 +4,7 @@ import greetUser from "../src/cli.js";
 import playGame from "./brain-even.js";
 import startCalculatorGame from "./brain-calc.js";
 import startGcdGame from "./brain-gcd.js"
-
+import startArithmeticProgression from "./brain-progression.js";
 
 const main = () => {
   console.log("Welcome to the Brain Games!");
@@ -21,9 +21,11 @@ const main = () => {
     startCalculatorGame(); // Запуск игры "Калькулятор"
   } else if (gameChoice === "brain-gcd") {  
     startGcdGame(); // Запуск игры "наибольший общий делитель"  
-  } else {
-    console.log("Invalid choice! Please select 1 or 2.");
-  }
+  } else if (gameChoice === "brain-progression") {  
+    startArithmeticProgression();
+  }  else {  
+    console.log("Invalid choice! Please select  a valid game.");  
+  }  
 };
 
 main();
