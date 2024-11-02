@@ -2,20 +2,28 @@
 
 import { question } from 'readline-sync';  
 
-const startArithmeticProgression = () => {  
-  const length = getRandomInt(5, 10);  
-  const progressionData = generateProgression(length);  
-  const { progression, hiddenValue } = progressionData;  
+const startArithmeticProgression = (userName) => {  
+  const rounds = 3; // Количество вопросов  
+  console.log("What number is missing in the progression?");  
 
-  console.log("Question:", progression.join(" "));  
-  const answer = question("Your answer: ");  
+  for (let i = 0; i < rounds; i++) {  
+    const length = getRandomInt(5, 10);  
+    const progressionData = generateProgression(length);  
+    const { progression, hiddenValue } = progressionData;  
 
-  if (parseInt(answer, 10) === hiddenValue) {  
-    console.log("Correct!");  
-  } else {  
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${hiddenValue}'.`);  
-    console.log("Let's try again!");  
+    console.log("Question:", progression.join(" "));  
+    const answer = question("Your answer: ");  
+
+    if (parseInt(answer, 10) === hiddenValue) {  
+      console.log("Correct!");  
+    } else {  
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${hiddenValue}'.`);  
+      console.log(`Let's try again, ${userName}!`);  
+      return; // Завершить игру при неверном ответе  
+    }  
   }  
+
+  console.log(`Congratulations, ${userName}!`); // Поздравление при успешном завершении игры  
 };  
 
 // Генерация арифметической прогрессии  

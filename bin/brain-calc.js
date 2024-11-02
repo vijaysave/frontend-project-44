@@ -21,7 +21,7 @@ const getRandomOperator = () => {
 const getRandomInt = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
 
-const startCalculatorGame = () => {
+const startCalculatorGame = (userName) => {
   console.log("What is the result of the expression?");
 
   for (let i = 0; i < 3; i++) {
@@ -44,7 +44,7 @@ const startCalculatorGame = () => {
     }
   }
 
-  console.log("Congratulations, you win!");
+  console.log(`Congratulations, ${userName}!`);
 };
 
 export default startCalculatorGame;

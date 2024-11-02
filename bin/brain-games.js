@@ -1,33 +1,30 @@
-#!/usr/bin/env node
-import { question } from "readline-sync";
-import greetUser from "../src/cli.js";
-import playGame from "./brain-even.js";
-import startCalculatorGame from "./brain-calc.js";
-import startGcdGame from "./brain-gcd.js"
-import startArithmeticProgression from "./brain-progression.js";
+// index.js  
 
-const main = () => {
-  console.log("Welcome to the Brain Games!");
+import { question } from "readline-sync";  
+import greetUser from "../src/cli.js";  
+import playGame from "./brain-even.js";  
+import startCalculatorGame from "./brain-calc.js";  
+import startGcdGame from "./brain-gcd.js";  
+import startArithmeticProgression from "./brain-progression.js";  
 
-  greetUser(); 
+const main = () => {  
+  console.log("Welcome to the Brain Games!");  
 
-  const gameChoice = question(
-    " ",
-  );
+  const userName = greetUser(); 
 
-  if (gameChoice === "brain-even") {
-    playGame(); // Запуск игры "Четное или нечетное число"
-  } else if (gameChoice === "brain-calc") {
-    startCalculatorGame(); // Запуск игры "Калькулятор"
+  const gameChoice = question(  
+    "Choose a game (brain-even, brain-calc, brain-gcd, brain-progression): ",  
+  );  
+
+  if (gameChoice === "brain-even") {  
+    playGame(userName); 
+  } else if (gameChoice === "brain-calc") {  
+    startCalculatorGame(userName);  
   } else if (gameChoice === "brain-gcd") {  
-    startGcdGame(); // Запуск игры "наибольший общий делитель"  
+    startGcdGame(userName);  
   } else if (gameChoice === "brain-progression") {  
-    startArithmeticProgression();
-  }  else {  
-    console.log("Invalid choice! Please select  a valid game.");  
+    startArithmeticProgression(userName);   
   }  
-};
+};  
 
 main();
-greetUser();
-playGame();

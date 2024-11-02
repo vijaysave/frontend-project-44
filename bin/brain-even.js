@@ -4,7 +4,7 @@ const isEven = (number) => number % 2 === 0;
 
 const getRandomNumber = () => Math.floor(Math.random() * 100);
 
-const playGame = () => {
+const playGame = (userName) => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
   for (let i = 0; i < 3; i++) {
@@ -22,7 +22,7 @@ const playGame = () => {
     }
   }
 
-  console.log("Congratulations, you win!");
+  console.log(`Congratulations, ${userName}!`);
 };
 
 export default playGame;
