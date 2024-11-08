@@ -6,6 +6,7 @@ import playGame from "./brain-even.js";
 import startCalculatorGame from "./brain-calc.js";  
 import startGcdGame from "./brain-gcd.js";  
 import startArithmeticProgression from "./brain-progression.js";  
+import playPrimeGame from "./brain-prime.js";
 
 const main = () => {  
   console.log("Welcome to the Brain Games!");  
@@ -24,7 +25,9 @@ const main = () => {
     startGcdGame(userName);  
   } else if (gameChoice === "brain-progression") {  
     startArithmeticProgression(userName);   
-  }  
+  } else if (gameChoice === "brain-prime") {  
+  playPrimeGame(userName);   
+}  
 };  
 
 main();
