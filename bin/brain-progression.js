@@ -2,7 +2,14 @@
 
 import { question } from 'readline-sync';  
 
-const startArithmeticProgression = (userName) => {  
+const greetUser = () => {  
+  const name = question("May I have your name? ");  
+  console.log(`Hello, ${name}!`);  
+  return name;  
+}; 
+
+const startArithmeticProgression = () => {  
+  const username = greetUser();
   const rounds = 3; // Количество вопросов  
   console.log("What number is missing in the progression?");  
 
@@ -18,12 +25,12 @@ const startArithmeticProgression = (userName) => {
       console.log("Correct!");  
     } else {  
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${hiddenValue}'.`);  
-      console.log(`Let's try again, ${userName}!`);  
+      console.log(`Let's try again, ${username}!`);  
       return; // Завершить игру при неверном ответе  
     }  
   }  
 
-  console.log(`Congratulations, ${userName}!`); // Поздравление при успешном завершении игры  
+  console.log(`Congratulations, ${username}!`); // Поздравление при успешном завершении игры  
 };  
 
 // Генерация арифметической прогрессии  

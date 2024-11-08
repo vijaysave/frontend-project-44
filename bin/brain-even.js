@@ -1,10 +1,17 @@
 import { question } from "readline-sync";
 
+const greetUser = () => {  
+  const name = question("May I have your name? ");  
+  console.log(`Hello, ${name}!`);  
+  return name;  
+}; 
+
 const isEven = (number) => number % 2 === 0;
 
 const getRandomNumber = () => Math.floor(Math.random() * 100);
 
-const playGame = (userName) => {
+const playGame = () => {
+  const username = greetUser();
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
   for (let i = 0; i < 3; i++) {
@@ -22,7 +29,7 @@ const playGame = (userName) => {
     }
   }
 
-  console.log(`Congratulations, ${userName}!`);
+  console.log(`Congratulations, ${username}!`);
 };
 
 export default playGame;

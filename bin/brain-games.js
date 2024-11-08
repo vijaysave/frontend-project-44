@@ -12,7 +12,9 @@ const main = () => {
 
   const userName = greetUser(); 
 
-  const gameChoice = question(  
+  let continuePlaying = true; 
+  while (continuePlaying) {  
+    const gameChoice = question(  
     "",  ///"Choose a game (brain-even, brain-calc, brain-gcd, brain-progression): "
   );  
 
@@ -26,6 +28,7 @@ const main = () => {
     startArithmeticProgression(userName);   
   } else if (gameChoice === "brain-prime") {  
   playPrimeGame(userName);   
+}  
 }  
 };  
 

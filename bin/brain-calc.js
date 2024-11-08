@@ -1,5 +1,11 @@
 import { question } from "readline-sync";
 
+const greetUser = () => {  
+  const name = question("May I have your name? ");  
+  console.log(`Hello, ${name}!`);  
+  return name;  
+}; 
+
 const calculate = (num1, num2, operator) => {
   switch (operator) {
     case "+":
@@ -21,7 +27,8 @@ const getRandomOperator = () => {
 const getRandomInt = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
 
-const startCalculatorGame = (userName) => {
+const startCalculatorGame = () => {
+  const username = greetUser();
   console.log("What is the result of the expression?");
 
   for (let i = 0; i < 3; i++) {
@@ -44,7 +51,7 @@ const startCalculatorGame = (userName) => {
     }
   }
 
-  console.log(`Congratulations, ${userName}!`);
+  console.log(`Congratulations, ${username}!`);
 };
 
 export default startCalculatorGame;
