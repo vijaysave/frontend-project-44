@@ -1,4 +1,4 @@
-// brain-prime.js  
+
 
 import { question } from "readline-sync";  
 

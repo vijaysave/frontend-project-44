@@ -1,4 +1,4 @@
-// brain-progression.js  
+
 
 import { question } from 'readline-sync';  
 

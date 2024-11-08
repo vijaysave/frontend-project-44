@@ -1,11 +1,7 @@
 #!/usr/bin/env node  
 import { question } from "readline-sync";  
 
-const greetUser = () => {  
-  const name = question("May I have your name? ");  
-  console.log(`Hello, ${name}!`);  
-  return name;  
-};  
+
 
 const gcd = (a, b) => {  
   while (b) {  
@@ -16,8 +12,8 @@ const gcd = (a, b) => {
   return a;  
 };  
 
-const startGcdGame = () => {  
-  const username = greetUser();  
+const startGcdGame = (userName) => {  
+    
   console.log("Find the greatest common divisor of given numbers.");  
 
   for (let i = 0; i < 3; i++) {  
@@ -31,12 +27,12 @@ const startGcdGame = () => {
       console.log("Correct!");  
     } else {  
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);  
-      console.log(`Let's try again, ${username}!`);  
+      console.log(`Let's try again, ${userName}!`);  
       return;  
     }  
   }  
   
-  console.log(`Congratulations, ${username}!`);  
+  console.log(`Congratulations, ${userName}!`);  
 };  
 
 export default startGcdGame;

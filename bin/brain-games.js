@@ -1,4 +1,3 @@
-// index.js  
 
 import { question } from "readline-sync";  
 import greetUser from "../src/cli.js";  
@@ -14,7 +13,7 @@ const main = () => {
   const userName = greetUser(); 
 
   const gameChoice = question(  
-    "Choose a game (brain-even, brain-calc, brain-gcd, brain-progression): ",  
+    "",  ///"Choose a game (brain-even, brain-calc, brain-gcd, brain-progression): "
   );  
 
   if (gameChoice === "brain-even") {  
