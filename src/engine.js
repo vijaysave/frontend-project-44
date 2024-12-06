@@ -26,4 +26,4 @@ const runGame = (gameLogic) => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-export { runGame, greetUser };
+export { runGame };

@@ -21,10 +21,10 @@ const main = () => {
         runGame(startCalculatorGame);  
         break;  
       case "brain-gcd":  
-        runGame(startGcdGame);  
+        runGame(startGcdGame); 
         break;  
       case "brain-progression":  
-        runGame(startArithmeticProgression);  
+        runGame(startArithmeticProgression); 
         break;  
       case "brain-prime":  
         runGame(playPrimeGame); 
