@@ -1,4 +1,4 @@
-import { runGame } from "../src/engine.js";
+import { runGame } from "/src/engine.js";
 
 const isPrime = (num) => {
   if (num <= 1) return false;

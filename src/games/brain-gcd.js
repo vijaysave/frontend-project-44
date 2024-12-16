@@ -1,4 +1,4 @@
-import { runGame } from "../src/engine.js";
+import { runGame } from "/src/engine.js";
 
 const gcd = (a, b) => {
   while (b) {
@@ -10,10 +10,10 @@ const gcd = (a, b) => {
 };
 
 const gameLogic = () => {
-  const num1 = Math.floor(Math.random() * 100) + 1;
-  const num2 = Math.floor(Math.random() * 100) + 1;
-  const question = `${num1} ${num2}`;
-  const correctAnswer = gcd(num1, num2);
+  const first_number = Math.floor(Math.random() * 100) + 1;
+  const two_number = Math.floor(Math.random() * 100) + 1;
+  const question = `${first_number} ${two_number}`;
+  const correctAnswer = gcd(first_number, two_number);
   return { question, correctAnswer };
 };
 

@@ -1,13 +1,13 @@
-import { runGame } from "../src/engine.js";
+import { runGame } from "/src/engine.js";
 
-const calculate = (num1, num2, operator) => {
+const calculate = (first_number, two_number, operator) => {
   switch (operator) {
     case "+":
-      return num1 + num2;
+      return first_number + two_number;
     case "-":
-      return num1 - num2;
+      return first_number - two_number;
     case "*":
-      return num1 * num2;
+      return first_number * two_number;
     default:
       throw new Error("Unknown operator");
   }
@@ -22,12 +22,12 @@ const getRandomInt = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
 
 const gameLogic = () => {
-  const num1 = getRandomInt(1, 100);
-  const num2 = getRandomInt(1, 100);
+  const first_number = getRandomInt(1, 100);
+  const two_number = getRandomInt(1, 100);
   const operator = getRandomOperator();
 
-  const question = `${num1} ${operator} ${num2}`;
-  const correctAnswer = calculate(num1, num2, operator);
+  const question = `${first_number} ${operator} ${two_number}`;
+  const correctAnswer = calculate(first_number, two_number, operator);
   return { question, correctAnswer };
 };
 
