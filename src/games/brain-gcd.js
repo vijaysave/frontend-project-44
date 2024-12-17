@@ -1,22 +1,28 @@
-import { runGame } from "/src/engine.js";
+import { runGame } from "./engine.js";  
 
-const gcd = (a, b) => {
-  while (b) {
-    const temp = b;
-    b = a % b;
-    a = temp;
-  }
-  return a;
-};
+const MIN_RANDOM_NUMBER = 1;  
+const MAX_RANDOM_NUMBER = 100;  
 
-const gameLogic = () => {
-  const first_number = Math.floor(Math.random() * 100) + 1;
-  const two_number = Math.floor(Math.random() * 100) + 1;
-  const question = `${first_number} ${two_number}`;
-  const correctAnswer = gcd(first_number, two_number);
-  return { question, correctAnswer };
-};
+const calculateGreatestCommonDivisor = (a, b) => {  
+  let x = a;   
+  let y = b;  
 
-const startGcdGame = () => runGame(gameLogic);
+  while (y) {  
+    const temp = y;  
+    y = x % y;  
+    x = temp; 
+  }  
+  return x; 
+}; 
+
+const generateGameQuestion = () => {  
+  const first_number = Math.floor(Math.random() * (MAX_RANDOM_NUMBER - MIN_RANDOM_NUMBER + 1)) + MIN_RANDOM_NUMBER;  
+  const two_number = Math.floor(Math.random() * (MAX_RANDOM_NUMBER - MIN_RANDOM_NUMBER + 1)) + MIN_RANDOM_NUMBER;  
+  const question = `${first_number} ${two_number}`;  
+  const correctAnswer = calculateGreatestCommonDivisor(first_number, two_number);  
+  return { question, correctAnswer };  
+};  
+
+const startGcdGame = () => runGame(generateGameQuestion);  
 
 export default startGcdGame;

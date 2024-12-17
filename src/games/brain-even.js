@@ -1,16 +1,19 @@
-import { runGame } from "./src/engine.js";
+import { runGame } from "./engine.js";  
 
-const isEven = (number) => number % 2 === 0;
+const MIN_RANDOM_NUMBER = 0;  
+const MAX_RANDOM_NUMBER = 100;  
 
-const getRandomNumber = () => Math.floor(Math.random() * 100);
+const isEven = (number) => number % 2 === 0;  
 
-const gameLogic = () => {
-  const number = getRandomNumber();
-  const question = `${number}`;
-  const correctAnswer = isEven(number) ? "yes" : "no";
-  return { question, correctAnswer };
-};
+const getRandomNumber = () => Math.floor(Math.random() * (MAX_RANDOM_NUMBER - MIN_RANDOM_NUMBER + 1)) + MIN_RANDOM_NUMBER;  
 
-const playGame = () => runGame(gameLogic);
+const generateGameQuestion = () => {  
+  const number = getRandomNumber();  
+  const question = `${number}`;  
+  const correctAnswer = isEven(number) ? "yes" : "no";  
+  return { question, correctAnswer };  
+};  
+
+const playGame = () => runGame(generateGameQuestion);  
 
 export default playGame;

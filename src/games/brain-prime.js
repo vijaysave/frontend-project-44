@@ -1,20 +1,23 @@
-import { runGame } from "/src/engine.js";
+import { runGame } from "./engine.js";  
 
-const isPrime = (num) => {
-  if (num <= 1) return false;
-  for (let i = 2; i <= Math.sqrt(num); i++) {
-    if (num % i === 0) return false;
-  }
-  return true;
-};
+const MIN_RANDOM_NUMBER = 0;  
+const MAX_RANDOM_NUMBER = 100;  
 
-const gameLogic = () => {
-  const num = Math.floor(Math.random() * 100);
-  const question = `${num}`;
-  const correctAnswer = isPrime(num) ? "yes" : "no";
-  return { question, correctAnswer };
-};
+const isPrime = (num) => {  
+  if (num <= 1) return false;  
+  for (let i = 2; i <= Math.sqrt(num); i++) {  
+    if (num % i === 0) return false;  
+  }  
+  return true;  
+};  
 
-const playPrimeGame = () => runGame(gameLogic);
+const generateGameQuestion = () => {  
+  const num = Math.floor(Math.random() * (MAX_RANDOM_NUMBER - MIN_RANDOM_NUMBER + 1)) + MIN_RANDOM_NUMBER;  
+  const question = `${num}`;  
+  const correctAnswer = isPrime(num) ? "yes" : "no";  
+  return { question, correctAnswer };  
+};  
+
+const playPrimeGame = () => runGame(generateGameQuestion);  
 
 export default playPrimeGame;

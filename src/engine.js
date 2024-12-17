@@ -6,7 +6,7 @@ const greetUser = () => {
   return userName;  
 };  
 
-const runGame = (gameLogic, instructions) => {  
+const runGame = ( generateGameQuestion, instructions) => {  
   const userName = greetUser();  
   console.log("Welcome to the Brain Games!\n");  
 
@@ -15,10 +15,8 @@ const runGame = (gameLogic, instructions) => {
     console.log(instructions);  
   }  
 
-  console.log("You will be given 3 questions. Try to answer them correctly!\n");  
-
   for (let i = 0; i < 3; i++) {  
-    const { question, correctAnswer } = gameLogic();  
+    const { question, correctAnswer } =  generateGameQuestion(); 
     const userAnswer = readlineSync.question(`Question: ${question}\nYour answer: `);  
 
     if (String(userAnswer) === String(correctAnswer)) {  
