@@ -1,6 +1,7 @@
-import { runGame } from "./engine.js";  
+import { runGame } from "../engine.js";  
+import { getRandomInt } from "../randomUtils.js";  
 
-const MIN_RANDOM_NUMBER = 0;  
+const MIN_RANDOM_NUMBER = 1;  
 const MAX_RANDOM_NUMBER = 100;  
 
 const isPrime = (num) => {  
@@ -12,7 +13,7 @@ const isPrime = (num) => {
 };  
 
 const generateGameQuestion = () => {  
-  const num = Math.floor(Math.random() * (MAX_RANDOM_NUMBER - MIN_RANDOM_NUMBER + 1)) + MIN_RANDOM_NUMBER;  
+  const num = getRandomInt(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);  
   const question = `${num}`;  
   const correctAnswer = isPrime(num) ? "yes" : "no";  
   return { question, correctAnswer };  
@@ -20,4 +21,4 @@ const generateGameQuestion = () => {
 
 const playPrimeGame = () => runGame(generateGameQuestion);  
 
-export default playPrimeGame;
+export default playPrimeGame;  
