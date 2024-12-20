@@ -37,4 +37,5 @@ const startArithmeticProgression = () => {
   const instructions = 'What number is missing in the progression?';
   runGame(generateGameQuestion, instructions);
 };
+
 export default startArithmeticProgression;

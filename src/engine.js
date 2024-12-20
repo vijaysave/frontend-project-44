@@ -31,4 +31,4 @@ const runGame = (generateGameQuestion, instructions) => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-export { runGame };
+export default runGame;
