@@ -4,16 +4,16 @@ import { getRandomInt } from '../randomUtils.js';
 const MIN_RANDOM_NUMBER = 1;
 const MAX_RANDOM_NUMBER = 100;
 
-const calculate = (firstnumber, twonumber, operator) => {
+const calculate = (firstNumber, secondNumber, operator) => {
   switch (operator) {
     case "+":
-      return firstnumber + twonumber;
+      return firstNumber + secondNumber;
     case "-":
-      return firstnumber - twonumber;
+      return firstNumber - secondNumber;
     case "*":
-      return firstnumber * twonumber;
+      return firstNumber * secondNumber;
     default:
-      throw new Error("Unknown operator");
+      throw new Error('Unknown operator');
   }
 };
 
@@ -24,12 +24,12 @@ const getRandomOperator = () => {
 };
 
 const generateGameQuestion = () => {
-  const firstnumber = getRandomInt(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
-  const twonumber = getRandomInt(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+  const firstNumber = getRandomInt(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+  const secondNumber = getRandomInt(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
   const operator = getRandomOperator();
 
-  const question = `${firstnumber} ${operator} ${twonumber}`;
-  const correctAnswer = calculate(firstnumber, twonumber, operator);
+  const question = `${firstNumber} ${operator} ${secondNumber}`;
+  const correctAnswer = calculate(firstNumber, secondNumber, operator);
   return { question, correctAnswer };
 };
 

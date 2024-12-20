@@ -17,10 +17,10 @@ const calculateGreatestCommonDivisor = (a, b) => {
 };
 
 const generateGameQuestion = () => {
-  const firstnumber = getRandomInt(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
-  const twonumber = getRandomInt(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
-  const question = `${firstnumber} ${twonumber}`;
-  const correctAnswer = calculateGreatestCommonDivisor(firstnumber, twonumber);
+  const firstNumber = getRandomInt(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+  const secondNumber  = getRandomInt(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+  const question = `${firstNumber} ${secondNumber }`;
+  const correctAnswer = calculateGreatestCommonDivisor(firstNumber, secondNumber );
   return { question, correctAnswer };
 };
 
