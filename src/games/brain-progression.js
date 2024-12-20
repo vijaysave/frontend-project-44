@@ -1,5 +1,5 @@
-import { runGame } from '../engine.js';
-import { getRandomInt } from '../randomUtils.js';
+import runGame from '../engine.js';
+import getRandomInt from '../randomUtils.js';
 
 const MIN_START = 1;
 const MAX_START = 10;
