@@ -4,14 +4,14 @@ import { getRandomInt } from '../randomUtils.js';
 const MIN_RANDOM_NUMBER = 1;
 const MAX_RANDOM_NUMBER = 100;
 
-const calculate = (first_number, two_number, operator) => {
+const calculate = (firstnumber, twonumber, operator) => {
   switch (operator) {
     case "+":
-      return first_number + two_number;
+      return firstnumber + twonumber;
     case "-":
-      return first_number - two_number;
+      return firstnumber - twonumber;
     case "*":
-      return first_number * two_number;
+      return firstnumber * twonumber;
     default:
       throw new Error("Unknown operator");
   }
@@ -19,7 +19,7 @@ const calculate = (first_number, two_number, operator) => {
 
 const getRandomOperator = () => {
   const operators = ['+', '-', '*'];
-  const randomIndex = getRandomInt(0, operators.length - 1); 
+  const randomIndex = getRandomInt(0, operators.length - 1);
   return operators[randomIndex];
 };
 

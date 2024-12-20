@@ -11,7 +11,7 @@ const generateGameQuestion = () => {
   const question = `${number}`;
   const correctAnswer = isEven(number) ? 'yes' : 'no';
   return { question, correctAnswer };
-};  
+};
 
 const playGame = () => {
   const instructions = 'Answer "yes" if the number is even, otherwise answer "no".';

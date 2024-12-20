@@ -1,10 +1,10 @@
 import { runGame } from '../engine.js';
 import { getRandomInt } from '../randomUtils.js';
 
-const MIN_RANDOM_NUMBER = 1;  
-const MAX_RANDOM_NUMBER = 100;  
+const MIN_RANDOM_NUMBER = 1;
+const MAX_RANDOM_NUMBER = 100;
 
-const isPrime = (num) => {  
+const isPrime = (num) => {
   if (num <= 1) return false;
   for (let i = 2; i <= Math.sqrt(num); i++) {
     if (num % i === 0) return false;
@@ -19,7 +19,7 @@ const generateGameQuestion = () => {
   return { question, correctAnswer };
 };
 
-const playPrimeGame = () => {  
+const playPrimeGame = () => {
   const instructions = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   runGame(generateGameQuestion, instructions);
 };
