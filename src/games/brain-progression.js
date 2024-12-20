@@ -34,6 +34,9 @@ const generateGameQuestion = () => {
   return { question, correctAnswer };  
 };  
 
-const startArithmeticProgression = () => runGame(generateGameQuestion);  
 
+const startArithmeticProgression = () => {  
+  const instructions = 'What number is missing in the progression?'; // Инструкция для игрока  
+  runGame(generateGameQuestion, instructions);  
+}; 
 export default startArithmeticProgression;

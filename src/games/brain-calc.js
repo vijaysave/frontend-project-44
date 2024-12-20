@@ -32,6 +32,10 @@ const generateGameQuestion = () => {
   return { question, correctAnswer };  
 };  
 
-const startCalculatorGame = () => runGame(generateGameQuestion);  
+
+const startCalculatorGame = () => {  
+  const instructions = 'What is the result of the expression?';  
+  runGame(generateGameQuestion, instructions);  
+};  
 
 export default startCalculatorGame;

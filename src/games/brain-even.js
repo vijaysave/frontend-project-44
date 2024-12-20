@@ -14,6 +14,10 @@ const generateGameQuestion = () => {
   return { question, correctAnswer };  
 };  
 
-const playGame = () => runGame(generateGameQuestion);  
+
+const playGame = () => {  
+  const instructions = 'Answer "yes" if the number is even, otherwise answer "no".';  
+  runGame(generateGameQuestion, instructions);  
+};  
 
 export default playGame;
