@@ -16,7 +16,8 @@ const runGame = ( generateGameQuestion, instructions) => {
 
   for (let i = 0; i < 3; i++) {  
     const { question, correctAnswer } =  generateGameQuestion(); 
-    const userAnswer = readlineSync.question(`Question: ${question}\nYour answer: `);  
+    console.log(`Question: ${question}`);  
+    const userAnswer = readlineSync.question("Your answer: ");    
 
     if (String(userAnswer) === String(correctAnswer)) {  
       console.log("Correct!");  
