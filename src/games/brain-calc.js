@@ -19,7 +19,8 @@ const calculate = (first_number, two_number, operator) => {
 
 const getRandomOperator = () => {
   const operators = ["+", "-", "*"];
-  return operators[Math.floor(Math.random() * operators.length)];
+  const randomIndex = getRandomInt(0, operators.length - 1); 
+  return operators[randomIndex];
 };
 
 const generateGameQuestion = () => {

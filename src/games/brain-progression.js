@@ -1,4 +1,5 @@
 import { runGame } from "../engine.js";
+import { getRandomInt } from "../randomUtils.js";
 
 const MIN_START = 1;
 const MAX_START = 10;
@@ -17,12 +18,12 @@ const generateProgression = (start, step, length) => {
 
 const generateGameQuestion = () => {
  
-  const length = Math.floor(Math.random() * (MAX_LENGTH - MIN_LENGTH + 1)) + MIN_LENGTH;
-  const start = Math.floor(Math.random() * (MAX_START - MIN_START + 1)) + MIN_START;
-  const step = Math.floor(Math.random() * (MAX_STEP - MIN_STEP + 1)) + MIN_STEP;
+  const length = getRandomInt(MIN_LENGTH, MAX_LENGTH);
+  const start = getRandomInt(MIN_START, MAX_START);
+  const step = getRandomInt(MIN_STEP, MAX_STEP);
 
   const progression = generateProgression(start, step, length);
-  const hiddenIndex = Math.floor(Math.random() * length);
+  const hiddenIndex = getRandomInt(0, length - 1); 
   const hiddenValue = progression[hiddenIndex];
   progression[hiddenIndex] = '..';
 
