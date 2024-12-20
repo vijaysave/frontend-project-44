@@ -1,4 +1,4 @@
-import { runGame } from "./engine.js";  
+import { runGame } from "../engine.js";  
 
 const MIN_RANDOM_NUMBER = 0;  
 const MAX_RANDOM_NUMBER = 100;  

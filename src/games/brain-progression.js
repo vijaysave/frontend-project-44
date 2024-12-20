@@ -1,4 +1,4 @@
-import { runGame } from "./engine.js";  
+import { runGame } from "../engine.js";  
 
 const MIN_START = 1;  
 const MAX_START = 10;  

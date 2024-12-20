@@ -1,6 +1,7 @@
 import readlineSync from "readline-sync";  
 
 const greetUser = () => {  
+  console.log("Welcome to the Brain Games!");  
   const userName = readlineSync.question("May I have your name? ");  
   console.log(`Hello, ${userName}!`);  
   return userName;  
@@ -8,8 +9,6 @@ const greetUser = () => {
 
 const runGame = ( generateGameQuestion, instructions) => {  
   const userName = greetUser();  
-  console.log("Welcome to the Brain Games!\n");  
-
 
   if (instructions) {  
     console.log(instructions);  
