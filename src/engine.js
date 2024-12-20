@@ -7,20 +7,20 @@ const greetUser = () => {
   return userName;
 };
 
-const runGame = ( generateGameQuestion, instructions) => {
+const runGame = (generateGameQuestion, instructions) => {
   const userName = greetUser();
 
   if (instructions) {
     console.log(instructions);
   }
 
-  for (let i = 0; i < 3; i++) {
-    const { question, correctAnswer } =  generateGameQuestion();
+  for (let i = 0; i < 3; i += 1) {
+    const { question, correctAnswer } = generateGameQuestion();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
     if (String(userAnswer) === String(correctAnswer)) {
-      console.log("Correct!");
+      console.log('Correct!');
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${userName}!`);
