@@ -18,9 +18,9 @@ const calculateGreatestCommonDivisor = (a, b) => {
 
 const generateGameQuestion = () => {
   const firstNumber = getRandomInt(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
-  const secondNumber  = getRandomInt(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
-  const question = `${firstNumber} ${secondNumber }`;
-  const correctAnswer = calculateGreatestCommonDivisor(firstNumber, secondNumber );
+  const secondNumber = getRandomInt(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+  const question = `${firstNumber} ${secondNumber}`;
+  const correctAnswer = String(calculateGreatestCommonDivisor(firstNumber, secondNumber));
   return { question, correctAnswer };
 };
 
@@ -28,4 +28,5 @@ const startGcdGame = () => {
   const instructions = 'Find the greatest common divisor of given numbers.';
   runGame(generateGameQuestion, instructions);
 };
+
 export default startGcdGame;
