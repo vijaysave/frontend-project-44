@@ -10,20 +10,19 @@ const MAX_LENGTH = 10;
 
 const generateProgression = (start, step, length) => {
   const progression = [];
-  for (let i = 0; i < length; i++) {
+  for (let i = 0; i < length; i += 1) {
     progression.push(start + i * step);
   }
   return progression;
 };
 
 const generateGameQuestion = () => {
- 
   const length = getRandomInt(MIN_LENGTH, MAX_LENGTH);
   const start = getRandomInt(MIN_START, MAX_START);
   const step = getRandomInt(MIN_STEP, MAX_STEP);
 
   const progression = generateProgression(start, step, length);
-  const hiddenIndex = getRandomInt(0, length - 1); 
+  const hiddenIndex = getRandomInt(0, length - 1);
   const hiddenValue = progression[hiddenIndex];
   progression[hiddenIndex] = '..';
 

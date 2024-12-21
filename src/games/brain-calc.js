@@ -6,11 +6,11 @@ const MAX_RANDOM_NUMBER = 100;
 
 const calculate = (firstNumber, secondNumber, operator) => {
   switch (operator) {
-    case "+":
+    case '+':
       return firstNumber + secondNumber;
-    case "-":
+    case '-':
       return firstNumber - secondNumber;
-    case "*":
+    case '*':
       return firstNumber * secondNumber;
     default:
       throw new Error('Unknown operator');
@@ -29,7 +29,7 @@ const generateGameQuestion = () => {
   const operator = getRandomOperator();
 
   const question = `${firstNumber} ${operator} ${secondNumber}`;
-  const correctAnswer = calculate(firstNumber, secondNumber, operator);
+  const correctAnswer = String(calculate(firstNumber, secondNumber, operator));
   return { question, correctAnswer };
 };
 
